@@ -1,7 +1,7 @@
-# Project: Research Assistant AI Agent
+# Project: ByteSpark Research Assistant
 
 ## 目标
-构建以 Claude Code 为基座的汽车与电池材料研究助理 AI 系统 Phase 1
+构建以 Claude Code 为基座的汽车与电池材料研究助理 AI 系统
 
 ## 核心流程
 新闻监控 → 数据更新 → 快评生成 → 审批 → 归档
@@ -11,7 +11,9 @@
 - Python 3.11+
 - ChromaDB (向量库)
 - Obsidian (笔记)
-- MCP Server (数据源)
+- LangGraph (工作流编排)
+- APScheduler (定时调度)
+- SQLAlchemy (数据库)
 
 ## 关键约定
 - 所有计算通过 Python 代码执行，LLM 仅负责逻辑描述

@@ -17,7 +17,7 @@ class ResearchNewsSkill(BaseSkill):
     async def execute(self, context: SkillContext) -> SkillResult:
         return SkillResult(
             success=True,
-            content="",
+            content=f"新闻分析：{context.user_input}\n\n影响：待评估",
             metadata={}
         )
 

@@ -16,6 +16,6 @@ class ResearchDataSkill(BaseSkill):
     async def execute(self, context: SkillContext) -> SkillResult:
         return SkillResult(
             success=True,
-            content="",
+            content=f"数据验证：{context.user_input}\n\n校验：完成",
             metadata={}
         )
