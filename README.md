@@ -2,13 +2,23 @@
 
 AI-powered research assistant for equity research in Automotive & Battery Materials sectors.
 
+> Copyright (c) 2026 dalianmao000. Licensed under MIT License.
+
 ## Features
 
-- **News Monitoring & Quick Reviews**: Automatically fetch and analyze news related to EV/battery supply chain
-- **Data Update & Validation**: Track key metrics like lithium/cobalt/nickel prices, battery installation volumes
-- **Report Generation**: Generate daily briefings, news commentary, and research reports
-- **Workflow Automation**: Scheduled task execution with human-in-the-loop approval
-- **Knowledge Management**: Integration with Obsidian for note-taking and ChromaDB for semantic search
+| Status | Feature | Description |
+|--------|---------|-------------|
+| ✅ Completed | News Monitoring | Automatically fetch and analyze news related to EV/battery supply chain |
+| ✅ Completed | Data Update & Validation | Track key metrics like lithium/cobalt/nickel prices, battery installation volumes |
+| ✅ Completed | Report Generation | Generate daily briefings, news commentary, and research reports |
+| ✅ Completed | Workflow Automation | Scheduled task execution with human-in-the-loop approval |
+| ✅ Completed | Knowledge Management | Integration with Obsidian for note-taking and ChromaDB for semantic search |
+| ✅ Completed | Database Persistence | SQLAlchemy ORM with SQLite/PostgreSQL support |
+| 🔄 Planned | Bloomberg/Wind Integration | Connect to Bloomberg and Wind terminals for real-time data |
+| 🔄 Planned | Multi-Agent Collaboration | Specialized agents for finance, IR, compliance workflows |
+| 🔄 Planned | Team Collaboration | Multi-user support with role-based permissions |
+| 🔄 Planned | API Service | RESTful API for external integrations |
+| 🔄 Planned | Web Dashboard | UI for workflow monitoring and approval |
 
 ## Architecture
 
@@ -70,13 +80,13 @@ src/
 ├── db/               # Database models and repositories
 ├── services/         # Notification service
 ├── skills/           # Research skills (news, data, report, review)
-├── storage/          # Storage layer (files, Obsidian, vector)
-├── mcp/              # MCP connectors for data sources
-└── main.py           # Entry point
+├── storage/         # Storage layer (files, Obsidian, vector)
+├── mcp/             # MCP connectors for data sources
+└── main.py          # Entry point
 
 tests/                # Unit and integration tests
 knowledge/           # Obsidian templates
-docs/                 # Design documents and specs
+docs/                # Design documents and specs
 ```
 
 ## Workflows
@@ -87,7 +97,7 @@ docs/                 # Design documents and specs
 
 ## License
 
-MIT License - see LICENSE file
+MIT License - see [LICENSE](LICENSE) file
 
 ## Contributing
 
