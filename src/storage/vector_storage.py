@@ -8,28 +8,50 @@ class VectorStorage:
 
     def __init__(self, persist_dir: Path):
         self.persist_dir = persist_dir
-        self.client = chromadb.PersistentClient(path=str(persist_dir))
-        self.collection = self.client.get_or_create_collection(
-            name="research_notes",
-            metadata={"description": "Research notes for semantic search"}
-        )
+        try:
+            self.client = chromadb.PersistentClient(path=str(persist_dir))
+            self.collection = self.client.get_or_create_collection(
+                name="research_notes",
+                metadata={"description": "Research notes for semantic search"}
+            )
+        except Exception as e:
+            raise IOError(f"Failed to initialize vector storage: {e}")
+
+    def _sanitize_filename(self, filename: str) -> str:
+        """Sanitize filename to prevent path traversal"""
+        return Path(filename).name
 
     def add_document(self, doc_id: str, content: str, metadata: dict) -> None:
         """添加文档到向量库"""
-        self.collection.add(
-            documents=[content],
-            ids=[doc_id],
-            metadatas=[metadata]
-        )
+        try:
+            doc_id = self._sanitize_filename(doc_id)
+            self.collection.add(
+                documents=[content],
+                ids=[doc_id],
+                metadatas=[metadata]
+            )
+        except Exception as e:
+            raise IOError(f"Failed to add document: {e}")
 
     def search(self, query: str, n_results: int = 5) -> list:
         """语义检索"""
-        results = self.collection.query(
-            query_texts=[query],
-            n_results=n_results
-        )
-        return results
+        try:
+            if n_results <= 0:
+                raise ValueError("n_results must be a positive integer")
+            results = self.collection.query(
+                query_texts=[query],
+                n_results=n_results
+            )
+            return results
+        except ValueError:
+            raise
+        except Exception as e:
+            raise IOError(f"Failed to search: {e}")
 
     def delete(self, doc_id: str) -> None:
         """删除文档"""
-        self.collection.delete(ids=[doc_id])
+        try:
+            doc_id = self._sanitize_filename(doc_id)
+            self.collection.delete(ids=[doc_id])
+        except Exception as e:
+            raise IOError(f"Failed to delete document: {e}")
