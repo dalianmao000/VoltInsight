@@ -53,6 +53,7 @@ class WorkflowNodes:
     def update_data(self, state: WorkflowState) -> WorkflowState:
         """更新数据节点"""
         state.current_step = "update_data"
+        state.status = WorkflowStatus.RUNNING
         start_time = time.time()
 
         try:
@@ -79,6 +80,7 @@ class WorkflowNodes:
     def generate_report(self, state: WorkflowState) -> WorkflowState:
         """生成报告节点"""
         state.current_step = "generate_report"
+        state.status = WorkflowStatus.RUNNING
         start_time = time.time()
 
         try:
