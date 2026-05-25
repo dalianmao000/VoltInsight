@@ -1,4 +1,4 @@
-# ByteSpark Research Assistant
+# Research Assistant
 
 AI-powered research assistant for equity research in Automotive & Battery Materials sectors.
 

@@ -1,4 +1,4 @@
-# ByteSpark 研究助手
+# Research Assistant 研究助手
 
 汽车与电池材料行业股票研究 AI 助手。
 

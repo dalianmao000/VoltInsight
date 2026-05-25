@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ByteSpark Research Assistant is an AI-powered system for equity research in Automotive & Battery Materials sectors. It uses a multi-layer architecture with LangGraph workflow orchestration and scheduled task execution.
+Research Assistant is an AI-powered system for equity research in Automotive & Battery Materials sectors. It uses a multi-layer architecture with LangGraph workflow orchestration and scheduled task execution.
 
 ## Common Commands
 

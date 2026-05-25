@@ -1,4 +1,4 @@
-# Project: ByteSpark Research Assistant
+# Project: VoltInsight Research Assistant
 
 ## 目标
 构建以 Claude Code 为基座的汽车与电池材料研究助理 AI 系统
